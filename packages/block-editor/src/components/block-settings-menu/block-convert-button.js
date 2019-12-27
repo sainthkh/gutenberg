@@ -13,7 +13,6 @@ export default function BlockConvertButton( { shouldRender, onClick, small } ) {
 	return (
 		<MenuItem
 			onClick={ onClick }
-			icon="screenoptions"
 		>
 			{ ! small && label }
 		</MenuItem>

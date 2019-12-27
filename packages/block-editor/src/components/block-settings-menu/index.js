@@ -28,6 +28,7 @@ import __experimentalBlockSettingsMenuPluginsExtension from './block-settings-me
 const POPOVER_PROPS = {
 	className: 'block-editor-block-settings-menu__popover',
 	position: 'bottom right',
+	noArrow: true,
 };
 
 export function BlockSettingsMenu( { clientIds } ) {
@@ -62,6 +63,7 @@ export function BlockSettingsMenu( { clientIds } ) {
 						label={ __( 'More options' ) }
 						className="block-editor-block-settings-menu"
 						popoverProps={ POPOVER_PROPS }
+						noIcons
 					>
 						{ ( { onClose } ) => (
 							<>
@@ -82,7 +84,6 @@ export function BlockSettingsMenu( { clientIds } ) {
 									{ canDuplicate && (
 										<MenuItem
 											onClick={ flow( onClose, onDuplicate ) }
-											icon="admin-page"
 											shortcut={ shortcuts.duplicate }
 										>
 											{ __( 'Duplicate' ) }
@@ -92,14 +93,12 @@ export function BlockSettingsMenu( { clientIds } ) {
 										<>
 											<MenuItem
 												onClick={ flow( onClose, onInsertBefore ) }
-												icon="insert-before"
 												shortcut={ shortcuts.insertBefore }
 											>
 												{ __( 'Insert Before' ) }
 											</MenuItem>
 											<MenuItem
 												onClick={ flow( onClose, onInsertAfter ) }
-												icon="insert-after"
 												shortcut={ shortcuts.insertAfter }
 											>
 												{ __( 'Insert After' ) }
@@ -120,7 +119,6 @@ export function BlockSettingsMenu( { clientIds } ) {
 									{ ! isLocked && (
 										<MenuItem
 											onClick={ flow( onClose, onRemove ) }
-											icon="trash"
 											shortcut={ shortcuts.remove }
 										>
 											{ _n( 'Remove Block', 'Remove Blocks', count ) }

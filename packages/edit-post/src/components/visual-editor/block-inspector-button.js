@@ -42,7 +42,6 @@ export function BlockInspectorButton( {
 					onClick();
 				}
 			} }
-			icon="admin-generic"
 			shortcut={ shortcut }
 		>
 			{ ! small && label }

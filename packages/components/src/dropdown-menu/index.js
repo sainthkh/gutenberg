@@ -42,6 +42,7 @@ function DropdownMenu( {
 	// The following props exist for backward compatibility.
 	menuLabel,
 	position,
+	noIcons,
 } ) {
 	if ( menuLabel ) {
 		deprecated( '`menuLabel` prop in `DropdownComponent`', {
@@ -118,7 +119,10 @@ function DropdownMenu( {
 			renderContent={ ( props ) => {
 				const mergedMenuProps = mergeProps( {
 					'aria-label': menuLabel || label,
-					className: 'components-dropdown-menu__menu',
+					className: classnames(
+						'components-dropdown-menu__menu',
+						{ 'no-icons': noIcons }
+					),
 				}, menuProps );
 
 				return (

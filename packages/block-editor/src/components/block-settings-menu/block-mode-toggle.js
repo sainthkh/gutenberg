@@ -24,7 +24,6 @@ export function BlockModeToggle( { blockType, mode, onToggleMode, small = false,
 	return (
 		<MenuItem
 			onClick={ onToggleMode }
-			icon="html"
 		>
 			{ ! small && label }
 		</MenuItem>
