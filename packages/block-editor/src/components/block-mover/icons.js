@@ -4,26 +4,26 @@
 import { Path, Polygon, SVG } from '@wordpress/components';
 
 export const upArrow = (
-	<SVG width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-		<Polygon points="9,4.5 3.3,10.1 4.8,11.5 9,7.3 13.2,11.5 14.7,10.1 " />
+	<SVG width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+		<Polygon points="16,14.5 12,10.6 8,14.5 7,13.5 12,8.4 17,13.5 " />
 	</SVG>
 );
 
 export const leftArrow = (
-	<SVG width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-		<Path d="M4.5 9l5.6-5.7 1.4 1.5L7.3 9l4.2 4.2-1.4 1.5L4.5 9z" />
+	<SVG width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+		<Polygon points="14.5,8 10.6,12 14.5,16 13.5,17 8.4,12 13.5,7 " />
 	</SVG>
 );
 
 export const downArrow = (
-	<SVG width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-		<Polygon points="9,13.5 14.7,7.9 13.2,6.5 9,10.7 4.8,6.5 3.3,7.9 " />
+	<SVG width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+		<Polygon points="8,9.5 12,13.4 16,9.5 17,10.5 12,15.6 7,10.5 " />
 	</SVG>
 );
 
 export const rightArrow = (
-	<SVG width="18" height="18" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-		<Path d="M13.5 9L7.9 3.3 6.5 4.8 10.7 9l-4.2 4.2 1.4 1.5L13.5 9z" />
+	<SVG width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+		<Polygon points="9.5,16 13.4,12 9.5,8 10.5,7 15.6,12 10.5,17 " />
 	</SVG>
 );
 
