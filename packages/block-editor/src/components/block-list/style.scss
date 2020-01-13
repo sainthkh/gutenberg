@@ -117,8 +117,8 @@
 		left: 0;
 		right: 0;
 
-		// 1px inside, 1px outside.
-		box-shadow: 0 0 0 1px $blue-medium-focus, inset 0 0 0 1px $blue-medium-focus;
+		// 2px outside.
+		box-shadow: 0 0 0 2px $blue-medium-focus;
 		border-radius: $radius-block-ui;
 	}
 
@@ -166,8 +166,8 @@
 			left: 0;
 			right: 0;
 
-			// 1px inside, 1px outside.
-			box-shadow: 0 0 0 1px $blue-medium-focus, inset 0 0 0 1px $blue-medium-focus;
+			// 2px outside.
+			box-shadow: 0 0 0 2px $blue-medium-focus;
 			border-radius: $radius-block-ui;
 
 			// Windows High Contrast mode will show this outline.
