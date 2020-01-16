@@ -42,7 +42,6 @@ import { toolbarSubmenuIcon, itemSubmenuIcon } from './icons';
 
 function NavigationLinkEdit( {
 	attributes,
-	hasChild,
 	hasDescendants,
 	isSelected,
 	isParentOfSelectedBlock,
