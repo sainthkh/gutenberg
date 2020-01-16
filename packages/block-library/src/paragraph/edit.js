@@ -85,6 +85,7 @@ function ParagraphBlock( {
 	onReplace,
 	setAttributes,
 	setFontSize,
+	Block,
 } ) {
 	const {
 		align,
@@ -147,7 +148,7 @@ function ParagraphBlock( {
 					<RichText
 						ref={ ref }
 						identifier="content"
-						tagName="p"
+						tagName={ Block.p }
 						className={ classnames( 'wp-block-paragraph', className, {
 							'has-drop-cap': dropCap,
 							[ `has-text-align-${ align }` ]: align,
