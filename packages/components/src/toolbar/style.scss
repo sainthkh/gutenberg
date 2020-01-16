@@ -25,6 +25,6 @@
 	}
 
 	&.components-button::before {
-		width: calc(100% - $grid-unit-30 - $grid-unit-30);
+		width: calc(100% - #{$grid-unit-30});
 	}
 }
