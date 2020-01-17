@@ -59,6 +59,36 @@
 				margin-right: auto;
 			}
 		}
+
+		// @todo: We should extract the tabs styles to the tabs component itself
+		.components-button.components-tab-button {
+			padding-left: 0;
+			padding-right: 0;
+			font-weight: 500;
+
+			span {
+				display: inline-block;
+				padding-left: $grid-unit-20;
+				padding-right: $grid-unit-20;
+				position: relative;
+			}
+		}
+
+		.components-button.components-tab-button:first-child {
+			padding-left: $grid-unit-05;
+			span {
+				padding-left: $grid-unit-15;
+				padding-right: $grid-unit-20;
+			}
+		}
+
+		.components-button.components-tab-button:last-child {
+			padding-right: $grid-unit-05;
+			span {
+				padding-left: $grid-unit-20;
+				padding-right: $grid-unit-15;
+			}
+		}
 	}
 
 	// Remove the left-border on the last item in the toolbar.
