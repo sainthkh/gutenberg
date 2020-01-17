@@ -4,6 +4,7 @@
 import classnames from 'classnames';
 import {
 	find,
+	findLast,
 	isNil,
 	pickBy,
 	startsWith,
@@ -463,13 +464,7 @@ class RichText extends Component {
 			inputRule( change, this.valueToFormat );
 		}
 
-		const transformed = formatTypes.reduce( ( accumlator, { __unstableInputRule } ) => {
-			if ( __unstableInputRule ) {
-				accumlator = __unstableInputRule( accumlator );
-			}
-
-			return accumlator;
-		}, change );
+		const transformed = findLast( formatTypes, ( { __unstableInputRule } ) => __unstableInputRule ) || change;
 
 		if ( transformed !== change ) {
 			this.onCreateUndoLevel();
