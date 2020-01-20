@@ -20,6 +20,7 @@ import {
 	RichText,
 	withFontSizes,
 	__experimentalUseColors,
+	Block,
 } from '@wordpress/block-editor';
 import { createBlock } from '@wordpress/blocks';
 import { compose } from '@wordpress/compose';
@@ -85,7 +86,6 @@ function ParagraphBlock( {
 	onReplace,
 	setAttributes,
 	setFontSize,
-	Block,
 } ) {
 	const {
 		align,

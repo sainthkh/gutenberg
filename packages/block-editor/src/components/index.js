@@ -66,6 +66,7 @@ export {
 } from './page-template-picker';
 export { default as BlockInspector } from './block-inspector';
 export { default as BlockList } from './block-list';
+export { Block } from './block-list/block';
 export { default as BlockMover } from './block-mover';
 export { default as BlockPreview } from './block-preview';
 export { default as BlockSelectionClearer } from './block-selection-clearer';

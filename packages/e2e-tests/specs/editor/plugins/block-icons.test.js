@@ -75,7 +75,7 @@ describe( 'Correctly Renders Block Icons on Inserter and Inspector', () => {
 		it( 'Can insert the block', async () => {
 			await insertBlock( blockTitle );
 			expect(
-				await getInnerHTML( `[data-type="${ blockName }"] [data-type="core/paragraph"] p` )
+				await getInnerHTML( `[data-type="${ blockName }"] [data-type="core/paragraph"]` )
 			).toEqual( blockTitle );
 		} );
 
