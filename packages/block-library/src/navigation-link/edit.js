@@ -160,6 +160,11 @@ function NavigationLinkEdit( {
 						'has-background-color': navigationAttributes.backgroundColor,
 						[ `has-${ navigationAttributes.backgroundColor }-background-color` ]: !! navigationAttributes.backgroundColor,
 					} ) }
+				style={ {
+					borderColor: navigationAttributes.valueTextColor,
+					color: navigationAttributes.valueTextColor,
+					backgroundColor: navigationAttributes.valueBackgroundColor,
+				} }
 			>
 				<div className="wp-block-navigation-link__content">
 					<RichText
