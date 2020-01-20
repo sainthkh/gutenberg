@@ -48,6 +48,7 @@ function NavigationLinkEdit( {
 	setAttributes,
 	showSubmenuIcon,
 	insertLinkBlock,
+	navigationAttributes,
 } ) {
 	const { label, opensInNewTab, title, url, nofollow, description } = attributes;
 	const link = {
@@ -147,13 +148,15 @@ function NavigationLinkEdit( {
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<div className={ classnames(
-				'wp-block-navigation-link', {
-					'is-editing': isSelected || isParentOfSelectedBlock,
-					'is-selected': isSelected,
-					'has-link': !! url,
-					'has-child': hasDescendants,
-				} ) }
+			<div
+				className={ classnames(
+					'wp-block-navigation-link', {
+						'is-editing': isSelected || isParentOfSelectedBlock,
+						'is-selected': isSelected,
+						'has-link': !! url,
+						'has-child': hasDescendants,
+					} ) }
+				style={ navigationAttributes.customTextColor ? { borderColor: navigationAttributes.customTextColor } : null }
 			>
 				<div className="wp-block-navigation-link__content">
 					<RichText
