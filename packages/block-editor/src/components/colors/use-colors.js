@@ -194,6 +194,7 @@ export default function __experimentalUseColors(
 						[ color ? name : camelCase( `custom ${ name }` ) ]: color ?
 							color.slug :
 							newColor,
+						[ camelCase( `value ${ name }` ) ]: newColor,
 					} );
 				},
 				{
