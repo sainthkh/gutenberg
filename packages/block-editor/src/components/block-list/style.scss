@@ -149,7 +149,10 @@
 			bottom: 0;
 			left: 0;
 			right: 0;
+		}
 
+		.is-block-content, // Floats.
+		&::after { // Everything else.
 			// 2px outside.
 			box-shadow: 0 0 0 2px $blue-medium-focus;
 			border-radius: $radius-block-ui;
@@ -170,6 +173,13 @@
 			}
 		}
 	}
+
+	// Hide the focus indicator for collapsed blocks.
+	// These serve as only as column containers for floated blocks.
+	.block-editor-block-list__block.is-block-collapsed::after {
+		content: none;
+	}
+
 }
 
 
