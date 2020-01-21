@@ -38,7 +38,7 @@ import { Fragment, useState, useEffect } from '@wordpress/element';
 /**
  * Internal dependencies
  */
-import { toolbarSubmenuIcon, itemSubmenuIcon } from './icons';
+import { ToolbarSubmenuIcon, ItemSubmenuIcon } from './icons';
 
 function NavigationLinkEdit( {
 	attributes,
@@ -98,7 +98,7 @@ function NavigationLinkEdit( {
 					/>
 					<ToolbarButton
 						name="submenu"
-						icon={ toolbarSubmenuIcon }
+						icon={ <ToolbarSubmenuIcon /> }
 						title={ __( 'Add submenu' ) }
 						onClick={ insertLinkBlock }
 					/>
@@ -183,7 +183,7 @@ function NavigationLinkEdit( {
 					/>
 					{ showSubmenuIcon &&
 						<span className="wp-block-navigation-link__submenu-icon">
-							{ itemSubmenuIcon }
+							<ItemSubmenuIcon />
 						</span>
 					}
 					{ isLinkOpen && (
