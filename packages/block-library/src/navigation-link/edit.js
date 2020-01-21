@@ -161,8 +161,8 @@ function NavigationLinkEdit( {
 						[ `has-${ navigationBlockAttributes.backgroundColor }-background-color` ]: !! navigationBlockAttributes.backgroundColor,
 					} ) }
 				style={ {
-					borderColor: navigationBlockAttributes.valueTextColor,
-					color: navigationBlockAttributes.valueTextColor,
+					// borderColor: navigationBlockAttributes.valueTextColor,
+					color: navigationBlockAttributes.detectedTextColor,
 					backgroundColor: navigationBlockAttributes.valueBackgroundColor,
 				} }
 			>
