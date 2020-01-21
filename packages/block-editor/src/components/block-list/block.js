@@ -216,15 +216,6 @@ export const BlockComponent = forwardRef( ( { children, tagName, ...props }, ref
 		! isTypingWithinBlock;
 
 	const isDragging = isDraggingBlocks && ( isSelected || isPartOfMultiSelection );
-
-	// Determine whether the block has props to apply to the wrapper.
-	if ( blockType.getEditWrapperProps ) {
-		wrapperProps = {
-			...wrapperProps,
-			...blockType.getEditWrapperProps( attributes ),
-		};
-	}
-
 	const isAligned = wrapperProps && wrapperProps[ 'data-align' ];
 
 	// The wp-block className is important for editor styles.
@@ -345,17 +336,6 @@ function BlockListBlock( {
 		/>
 	);
 
-	// For aligned blocks, provide a wrapper element so the block can be
-	// positioned relative to the block column. This is enabled with the
-	// .is-block-content className.
-	if ( isAligned ) {
-		blockEdit = <div className="is-block-content">{ blockEdit }</div>;
-	}
-
-	if ( mode !== 'visual' ) {
-		blockEdit = <div style={ { display: 'none' } }>{ blockEdit }</div>;
-	}
-
 	const blockType = getBlockType( name );
 	const lightBlockWrapper = hasBlockSupport( blockType, 'lightBlockWrapper', false );
 	const value = {
@@ -393,6 +373,19 @@ function BlockListBlock( {
 		}
 
 		value.wrapperProps = wrapperProps;
+	}
+
+	const isAligned = wrapperProps && wrapperProps[ 'data-align' ];
+
+	// For aligned blocks, provide a wrapper element so the block can be
+	// positioned relative to the block column. This is enabled with the
+	// .is-block-content className.
+	if ( isAligned ) {
+		blockEdit = <div className="is-block-content">{ blockEdit }</div>;
+	}
+
+	if ( mode !== 'visual' ) {
+		blockEdit = <div style={ { display: 'none' } }>{ blockEdit }</div>;
 	}
 
 	const memoizedValue = useMemo( () => value, Object.values( value ) );
