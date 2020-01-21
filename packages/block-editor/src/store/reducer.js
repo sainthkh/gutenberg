@@ -1368,6 +1368,8 @@ export function selectedMountedBlock( state, action ) {
 	switch ( action.type ) {
 		case 'SET_SELECTED_MOUNTED_BLOCK':
 			return action.clientId;
+		case 'TOGGLE_BLOCK_MODE':
+			return;
 	}
 
 	return state;

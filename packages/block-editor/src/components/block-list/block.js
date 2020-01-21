@@ -48,7 +48,12 @@ import { Context } from './root-container';
 
 const BlockContext = createContext();
 
-export const BlockComponent = forwardRef( ( { children, tagName, ...props }, ref ) => {
+export const BlockComponent = forwardRef( ( {
+	children,
+	tagName = 'div',
+	__unstableIsHtml,
+	...props
+}, ref ) => {
 	const fallbackRef = useRef();
 
 	ref = ref || fallbackRef;
@@ -89,6 +94,7 @@ export const BlockComponent = forwardRef( ( { children, tagName, ...props }, ref
 		isLocked,
 		name,
 		wrapperProps,
+		mode,
 	} = useContext( BlockContext );
 
 	useLayoutEffect( () => {
@@ -239,7 +245,8 @@ export const BlockComponent = forwardRef( ( { children, tagName, ...props }, ref
 		className
 	);
 
-	const blockElementId = `block-${ clientId }`;
+	const htmlSuffix = mode === 'html' && ! __unstableIsHtml ? '-visual' : '';
+	const blockElementId = `block-${ clientId }${ htmlSuffix }`;
 	const Animated = animated[ tagName ];
 
 	return (
@@ -361,6 +368,7 @@ function BlockListBlock( {
 		className,
 		isLocked,
 		name,
+		mode,
 	};
 
 	// Determine whether the block has props to apply to the wrapper.
@@ -397,7 +405,7 @@ function BlockListBlock( {
 					<>
 						{ blockEdit }
 						{ mode === 'html' && (
-							<Block.div>
+							<Block.div __unstableIsHtml>
 								<BlockHtml clientId={ clientId } />
 							</Block.div>
 						) }
