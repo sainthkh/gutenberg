@@ -48,7 +48,7 @@ function NavigationLinkEdit( {
 	setAttributes,
 	showSubmenuIcon,
 	insertLinkBlock,
-	navigationAttributes,
+	navigationBlockAttributes,
 } ) {
 	const { label, opensInNewTab, title, url, nofollow, description } = attributes;
 	const link = {
@@ -155,15 +155,15 @@ function NavigationLinkEdit( {
 						'is-selected': isSelected,
 						'has-link': !! url,
 						'has-child': hasDescendants,
-						'has-text-color': navigationAttributes.textColor,
-						[ `has-${ navigationAttributes.textColor }-color` ]: !! navigationAttributes.textColor,
-						'has-background-color': navigationAttributes.backgroundColor,
-						[ `has-${ navigationAttributes.backgroundColor }-background-color` ]: !! navigationAttributes.backgroundColor,
+						'has-text-color': navigationBlockAttributes.textColor,
+						[ `has-${ navigationBlockAttributes.textColor }-color` ]: !! navigationBlockAttributes.textColor,
+						'has-background-color': navigationBlockAttributes.backgroundColor,
+						[ `has-${ navigationBlockAttributes.backgroundColor }-background-color` ]: !! navigationBlockAttributes.backgroundColor,
 					} ) }
 				style={ {
-					borderColor: navigationAttributes.valueTextColor,
-					color: navigationAttributes.valueTextColor,
-					backgroundColor: navigationAttributes.valueBackgroundColor,
+					borderColor: navigationBlockAttributes.valueTextColor,
+					color: navigationBlockAttributes.valueTextColor,
+					backgroundColor: navigationBlockAttributes.valueBackgroundColor,
 				} }
 			>
 				<div className="wp-block-navigation-link__content">
