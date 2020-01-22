@@ -297,7 +297,7 @@ function register_block_core_navigation() {
 				),
 				'showSubmenuIcon'       => array(
 					'type'    => 'boolean',
-					'default' => false,
+					'default' => true,
 				),
 			),
 
