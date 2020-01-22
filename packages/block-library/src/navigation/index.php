@@ -279,9 +279,6 @@ function register_block_core_navigation() {
 				'valueBackgroundColor'  => array(
 					'type' => 'string',
 				),
-				'detectedTextColor'  => array(
-					'type' => 'string',
-				),
 				'fontSize'              => array(
 					'type' => 'string',
 				),
