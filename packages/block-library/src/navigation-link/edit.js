@@ -183,7 +183,7 @@ function NavigationLinkEdit( {
 					/>
 					{ showSubmenuIcon &&
 						<span className="wp-block-navigation-link__submenu-icon">
-							<ItemSubmenuIcon borderColor={ navigationBlockAttributes.detectedTextColor } />
+							<ItemSubmenuIcon />
 						</span>
 					}
 					{ isLinkOpen && (
