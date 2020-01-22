@@ -5,7 +5,8 @@
 }
 
 .components-menu-group__label {
+	text-transform: uppercase;
 	margin-bottom: $grid-unit-10;
-	color: $dark-gray-300;
+	color: $text-color-gray;
 	padding: 0 ($grid-unit-10 - $border-width);
 }

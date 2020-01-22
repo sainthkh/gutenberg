@@ -143,10 +143,11 @@ $arrow-size: 8px;
 }
 
 .components-popover__content {
-	box-shadow: $shadow-popover;
-	border: $border-width solid $border-color;
-	background: $white;
 	height: 100%;
+	background: $white;
+	border: $border-width solid $border-color-secondary;
+	box-shadow: $shadow-popover;
+	border-radius: $radius-block-ui;
 
 	.components-popover & {
 		position: absolute;
