@@ -33,8 +33,9 @@ import {
 	RichText,
 	__experimentalLinkControl as LinkControl,
 } from '@wordpress/block-editor';
+import { isURL, prependHTTP } from '@wordpress/url';
 import { Fragment, useState, useEffect, useRef } from '@wordpress/element';
-
+import { placeCaretAtHorizontalEdge } from '@wordpress/dom';
 /**
  * Internal dependencies
  */
@@ -82,10 +83,17 @@ function NavigationLinkEdit( {
 	// If the LinkControl popover is open and the URL has changed, close the LinkControl and focus the label text.
 	useEffect( () => {
 		if ( isLinkOpen && url ) {
-			// close the link
+			// Close the link.
 			setIsLinkOpen( false );
-			// focus the label
-			selectLabelText();
+
+			// Does this look like a URL and have something TLD-ish?
+			if ( isURL( prependHTTP( label ) ) && /^.+\.[a-z]+/.test( label ) ) {
+				// Focus and select the label text.
+				selectLabelText();
+			} else {
+				// Focus it (but do not select).
+				placeCaretAtHorizontalEdge( ref.current, true );
+			}
 		}
 	}, [ url ] );
 
@@ -221,8 +229,11 @@ function NavigationLinkEdit( {
 											normalizedTitle !== normalizedURL &&
 											label !== newTitle ) {
 											return escape( newTitle );
+										} else if ( label ) {
+											return label;
 										}
-										return label;
+										// If there's no label, add the URL.
+										return escape( normalizedURL );
 									} )(),
 									opensInNewTab: newOpensInNewTab,
 									id,
