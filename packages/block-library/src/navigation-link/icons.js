@@ -1,7 +1,7 @@
 /**
  * WordPress dependencies
  */
-import { Polygon, Path, SVG } from '@wordpress/components';
+import { Path, SVG } from '@wordpress/components';
 
 export const ToolbarSubmenuIcon = () => (
 	<SVG xmlns="http://www.w3.org/2000/svg" width="24" height="24">
@@ -11,7 +11,9 @@ export const ToolbarSubmenuIcon = () => (
 );
 
 export const ItemSubmenuIcon = ( { borderColor = 'black' } ) => (
-	<SVG fill={ borderColor } width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
-		<Polygon points="9,13.5 14.7,7.9 13.2,6.5 9,10.7 4.8,6.5 3.3,7.9 " />
+	<SVG fill={ borderColor } xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" transform="rotate(90)" >
+		<Path d="M8 5v14l11-7z" />
+		<Path d="M0 0h24v24H0z" fill="none" />
 	</SVG>
 );
+
