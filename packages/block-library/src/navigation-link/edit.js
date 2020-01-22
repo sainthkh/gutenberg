@@ -33,7 +33,7 @@ import {
 	RichText,
 	__experimentalLinkControl as LinkControl,
 } from '@wordpress/block-editor';
-import { Fragment, useState, useEffect } from '@wordpress/element';
+import { Fragment, useState, useEffect, useRef } from '@wordpress/element';
 
 /**
  * Internal dependencies
@@ -57,6 +57,7 @@ function NavigationLinkEdit( {
 	};
 	const [ isLinkOpen, setIsLinkOpen ] = useState( false );
 	const itemLabelPlaceholder = __( 'Add link…' );
+	const ref = useRef();
 
 	// Show the LinkControl on mount if the URL is empty
 	// ( When adding a new menu item)
@@ -77,6 +78,29 @@ function NavigationLinkEdit( {
 			setIsLinkOpen( false );
 		}
 	}, [ isSelected ] );
+
+	// If the LinkControl popover is open and the URL has changed, close the LinkControl and focus the label.
+	useEffect( () => {
+		if ( isLinkOpen && url ) {
+			// close the link
+			setIsLinkOpen( false );
+			// focus the label
+			selectLabelText();
+		}
+	}, [ url ] );
+
+	/**
+	 * Focus the navigation link label text and select it.
+	 */
+	function selectLabelText( ) {
+		ref.current.focus();
+		const selection = window.getSelection();
+		const range = document.createRange();
+		// Get the range of the current ref contents so we can add this range to the selection.
+		range.selectNodeContents( ref.current );
+		selection.removeAllRanges();
+		selection.addRange( range );
+	}
 
 	return (
 		<Fragment>
@@ -156,6 +180,7 @@ function NavigationLinkEdit( {
 			>
 				<div className="wp-block-navigation-link__content">
 					<RichText
+						ref={ ref }
 						tagName="span"
 						className="wp-block-navigation-link__label"
 						value={ label }
