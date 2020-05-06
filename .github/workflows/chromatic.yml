@@ -12,5 +12,6 @@ jobs:
         npm i
     - uses: chromaui/action@v1
       with:
+        buildScriptName: "storybook:build"
         projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
         token: ${{ secrets.GITHUB_TOKEN }}
