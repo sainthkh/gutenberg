@@ -42,7 +42,7 @@
 
 	&.is-primary {
 		white-space: nowrap;
-		background: color($theme-color);
+		background: color($theme-color shade(30%));
 		color: $white;
 		text-decoration: none;
 		text-shadow: none;
