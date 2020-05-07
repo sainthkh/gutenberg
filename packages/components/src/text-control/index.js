@@ -19,7 +19,7 @@ export default function TextControl( {
 	...props
 } ) {
 	const instanceId = useInstanceId( TextControl );
-	const id = `inspector-text-control-${ instanceId }`;
+	const id = `meaningless-prefix-inspector-text-control-${ instanceId }`;
 	const onChangeValue = ( event ) => onChange( event.target.value );
 
 	return (
