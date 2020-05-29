@@ -130,6 +130,7 @@
 		"benchmark": "2.1.4",
 		"browserslist": "4.9.1",
 		"chalk": "4.0.0",
+		"chromatic": "4.0.2",
 		"commander": "4.1.0",
 		"concurrently": "3.5.0",
 		"copy-webpack-plugin": "4.5.2",
